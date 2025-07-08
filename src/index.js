@@ -5,14 +5,17 @@ import { HelmetProvider } from 'react-helmet-async';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { CommonProvider } from './global/context/CommonContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HelmetProvider>
     <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <CommonProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CommonProvider>
     </React.StrictMode>
   </HelmetProvider>,
 );
