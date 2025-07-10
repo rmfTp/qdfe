@@ -4,6 +4,7 @@ import { MediumButton } from '../../global/components/Buttons';
 import color from '../../global/styles/color';
 import fontsize from '../../global/styles/fontsize';
 import LoginContainer from '../containers/LoginContainer';
+import MessageBox from '../../global/components/MessageBox';
 
 const { dark } = color;
 const { medium } = fontsize;
@@ -38,6 +39,7 @@ const LoginForm = ({ form, onChange, onSubmit, errors }) => {
         value={form.email ?? ''}
         onChange={onChange}
       />
+      <MessageBox items={errors.email}></MessageBox>
       <input
         type="password"
         placeholder="비밀번호"
@@ -45,6 +47,7 @@ const LoginForm = ({ form, onChange, onSubmit, errors }) => {
         value={form.password ?? ''}
         onChange={onChange}
       />
+      <MessageBox items={errors.email}></MessageBox>
       <MediumButton type="submit" width="100%">
         로그인
       </MediumButton>
