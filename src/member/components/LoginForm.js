@@ -3,33 +3,30 @@ import styled from 'styled-components';
 import { MediumButton } from '../../global/components/Buttons';
 import color from '../../global/styles/color';
 import fontsize from '../../global/styles/fontsize';
+import LoginContainer from '../containers/LoginContainer';
 import MessageBox from '../../global/components/MessageBox';
 
 const { dark } = color;
 const { medium } = fontsize;
-
 const StyledForm = styled.form`
   min-width: 280px;
   max-width: 450px;
   width: 100%;
   margin: 200px auto 0;
-
   input {
     border: 1px solid ${dark};
     width: 100%;
     height: 55px;
     display: block;
     font-size: ${medium};
-    text-align: center;
     border-radius: 3px;
+    text-align: center;
+    + input {
+      margin-top: 10px;
+    }
   }
-
-  input + input {
-    margin-top: 10px;
-  }
-
   button {
-    margin-top: 10px;
+    margin-top: 30px;
   }
 `;
 
@@ -53,7 +50,6 @@ const LoginForm = ({ form, onChange, onSubmit, errors }) => {
         onChange={onChange}
       />
       <MessageBox theme="danger">{errors.password}</MessageBox>
-
       <MediumButton type="submit" width="100%">
         로그인
       </MediumButton>
